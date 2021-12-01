@@ -9,7 +9,14 @@ public class Aluno extends Pessoa{
 	public Aluno() {
 		super();
 	}
-
+	
+	public Aluno(String dataMatricula, String nomeEscola, String nomeCurso) {
+		super();
+		this.dataMatricula = dataMatricula;
+		this.nomeEscola = nomeEscola;
+		this.nomeCurso = nomeCurso;
+	}
+	
 	public String getDataMatricula() {
 		return dataMatricula;
 	}
@@ -34,17 +41,21 @@ public class Aluno extends Pessoa{
 		this.nomeCurso = nomeCurso;
 	}
 
-	public Aluno(String dataMatricula, String nomeEscola, String nomeCurso) {
-		super();
-		this.dataMatricula = dataMatricula;
-		this.nomeEscola = nomeEscola;
-		this.nomeCurso = nomeCurso;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", nomeCurso=" + nomeCurso
 				+ "]";
 	}
 	
+	@Override // o Override identifica o método sobreescrito*/
+	public boolean pessoaMaiorIdade() {
+		return idade >= 21;
+		
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? 
+				"Você é maior de idade." : "Você é menor de idade!";
+	}
 }

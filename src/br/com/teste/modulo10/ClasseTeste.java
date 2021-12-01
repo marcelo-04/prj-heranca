@@ -10,7 +10,7 @@ public class ClasseTeste {
 		
 		Aluno aluno = new Aluno();
 		aluno.setNome("Marcelo");
-		aluno.setIdade(52);
+		aluno.setIdade(17);
 		aluno.setNomeEscola("Jdev - Treinamento");
 		
 		Diretor diretor = new Diretor();
@@ -26,7 +26,12 @@ public class ClasseTeste {
 		
 		System.out.println(aluno);
 		System.out.println(diretor);
-		System.out.println(secretario);
+		System.out.println(secretario);	
+		System.out.println();
+		
+		System.out.println(aluno.pessoaMaiorIdade()+ " - "+ aluno.msgMaiorIdade());
+		System.out.println(diretor.pessoaMaiorIdade());
+		System.out.println(secretario.pessoaMaiorIdade());
 
 	}
 
