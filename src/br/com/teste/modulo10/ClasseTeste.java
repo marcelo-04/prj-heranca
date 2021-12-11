@@ -2,6 +2,7 @@ package br.com.teste.modulo10;
 
 import br.com.modulo10.Aluno;
 import br.com.modulo10.Diretor;
+import br.com.modulo10.Pessoa;
 import br.com.modulo10.Secretario;
 
 public class ClasseTeste {
@@ -36,6 +37,17 @@ public class ClasseTeste {
 		System.out.println("Salário do Aluno: "+ aluno.salario());
 		System.out.println("Salário do Diretor: "+ diretor.salario());
 		System.out.println("Salário do Secretario: "+ secretario.salario());
+		System.out.println();
+
+		teste(aluno);
+		teste(diretor);
+		teste(secretario);
+	}
+
+	public static void teste(Pessoa pessoa) {
+		System.out.println("O Senhor: "+ pessoa.getNome()
+				+", tem o salário de R$ "
+				+ pessoa.salario());
 	}
 
 }
