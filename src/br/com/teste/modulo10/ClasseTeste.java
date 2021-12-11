@@ -22,8 +22,7 @@ public class ClasseTeste {
 		secretario.setNome("Marcos Silva");
 		secretario.setIdade(36);
 		secretario.setNivelCargo("Administrador");
-		
-		
+
 		System.out.println(aluno);
 		System.out.println(diretor);
 		System.out.println(secretario);	
@@ -32,7 +31,11 @@ public class ClasseTeste {
 		System.out.println(aluno.pessoaMaiorIdade()+ " - "+ aluno.msgMaiorIdade());
 		System.out.println(diretor.pessoaMaiorIdade());
 		System.out.println(secretario.pessoaMaiorIdade());
+		System.out.println();
 
+		System.out.println("Salário do Aluno: "+ aluno.salario());
+		System.out.println("Salário do Diretor: "+ diretor.salario());
+		System.out.println("Salário do Secretario: "+ secretario.salario());
 	}
 
 }

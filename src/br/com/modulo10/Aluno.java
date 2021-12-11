@@ -47,7 +47,12 @@ public class Aluno extends Pessoa{
 		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", nomeCurso=" + nomeCurso
 				+ "]";
 	}
-	
+
+	@Override
+	public double salario() {
+		return 1500.90;
+	}
+
 	@Override // o Override identifica o método sobreescrito*/
 	public boolean pessoaMaiorIdade() {
 		return idade >= 21;
