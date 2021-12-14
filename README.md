@@ -15,4 +15,9 @@ de classe que herdam os métodos desta classe abstrata.
 ## Beneficio:
 Clareza e manutenção do código, e podemos trablahar genéricamente.
 
+## Introdução a Interfaces
+Uma interface pode definir uma série de métodos, mas nunca conter implementaçao, somente a descrição ou declaração. Ela só expõe o que 
+o objeto deve fazer, a interface vai dita a regra do que os objetos que usam essa interface deve  fazer.
+É um meio de se conectar, só que tendo um contrato onde quem se responsabiliz por imlementar esses métodos.
+
 
