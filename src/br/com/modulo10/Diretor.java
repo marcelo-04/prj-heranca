@@ -1,10 +1,22 @@
 package br.com.modulo10;
 
-public class Diretor extends Pessoa {
+import br.com.interfaces.modulo10.PermitirAcesso;
+
+public class Diretor extends Pessoa implements PermitirAcesso {
 	
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
+	private String login;
+	private String senha;
+
+	public Diretor() {
+	}
+
+	public Diretor(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
 	
 	public String getRegistroEducacao() {
 		return registroEducacao;
@@ -36,5 +48,18 @@ public class Diretor extends Pessoa {
 	@Override
 	public double salario() {
 		return 3900.78;
+	}
+
+	@Override
+	public boolean autenticar(String login, String senha) {
+		//return login.equals("admin") && senha.equals("admin");
+		this.login = login;
+		this.senha = senha;
+		return  autenticar();
+	}
+
+	@Override
+	public boolean autenticar() {
+		return login.equals("admin") && senha.equals("1234");
 	}
 }
