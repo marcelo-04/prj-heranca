@@ -20,4 +20,8 @@ Uma interface pode definir uma série de métodos, mas nunca conter implementaç
 o objeto deve fazer, a interface vai dita a regra do que os objetos que usam essa interface deve  fazer.
 É um meio de se conectar, só que tendo um contrato onde quem se responsabiliz por imlementar esses métodos.
 
-
+## Trabalhando com Interfaces e o Polimorfismo
+Aprendir que trabalhar com interfaces e polimorfismo, podemos trabalhar com classes para implementação, pensando na segurança, para não termos 
+quebra de código nas classes.
+Dando permissão de autenticação para algumas classes como Secretário e Diretor. Iniciando um objeto da interface do tipo secretário com uma nova
+função de autenticação passando o objeto. Também podemos deixar o código genérico estancinado direto com o objeto.
