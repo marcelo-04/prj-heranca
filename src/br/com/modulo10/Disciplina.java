@@ -1,7 +1,6 @@
 package br.com.modulo10;
 
-import java.util.Objects;
-
+/*Essa classe Disciplina servirá para todos os objetos e instancia de notas e materias*/
 public class Disciplina {
 
     private double nota;
@@ -24,23 +23,38 @@ public class Disciplina {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Disciplina that = (Disciplina) o;
-        return Double.compare(that.nota, nota) == 0 && Objects.equals(disciplina, that.disciplina);
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((disciplina == null) ? 0 : disciplina.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(nota);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(nota, disciplina);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Disciplina other = (Disciplina) obj;
+        if (disciplina == null) {
+            if (other.disciplina != null)
+                return false;
+        } else if (!disciplina.equals(other.disciplina))
+            return false;
+        if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
+            return false;
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Disciplina{" +
-                "nota=" + nota +
-                ", disciplina='" + disciplina + '\'' +
-                '}';
+        return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
     }
+
 }

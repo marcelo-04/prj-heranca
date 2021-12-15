@@ -7,6 +7,7 @@ public abstract class Pessoa {
 	protected String dataNascimento;
 	protected String numeroRg;
 	protected String numeroCpf;
+	protected String numeroRa;
 	protected String nomeMae;
 	protected String nomePai;
 
@@ -42,6 +43,8 @@ public abstract class Pessoa {
 	public void setNumeroCpf(String numeroCpf) {
 		this.numeroCpf = numeroCpf;
 	}
+	public String getNumeroRa() {return numeroRa; }
+	public void setNumeroRa(String numeroRa) { this.numeroRa = numeroRa; }
 	public String getNomeMae() {
 		return nomeMae;
 	}
