@@ -1,6 +1,7 @@
 package br.com.teste.modulo10;
 
 import br.com.constantes.modulo10.StatusAluno;
+import br.com.interfaces.modulo10.PermitirAcesso;
 import br.com.modulo10.Aluno;
 import br.com.modulo10.Disciplina;
 import br.com.modulo10.Secretario;
@@ -16,7 +17,9 @@ public class TesteAluno {
 
         String login = JOptionPane.showInputDialog("Informe o login");
         String senha = JOptionPane.showInputDialog("Informe a senha");
-        
+
+        PermitirAcesso permitirAcesso = new Secretario(login, senha);
+
         if (new Secretario().autenticar(login, senha)) {
 
             List<Aluno> alunos = new ArrayList<Aluno>();
