@@ -39,7 +39,7 @@ public class TesteAluno {
                      */
 
                     String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + quantidade + " ?");
-//		String idade = JOptionPane.showInputDialog("Informe a idade do aluno: ");
+            		String idade = JOptionPane.showInputDialog("Informe a idade do aluno: ");
 //		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento do aluno: ");
 //		String rg = JOptionPane.showInputDialog("Informe o RG do aluno: ");
 //		String cpf = JOptionPane.showInputDialog("Informe o CPF do aluno: ");
@@ -53,7 +53,7 @@ public class TesteAluno {
                     Aluno aluno1 = new Aluno();
 
                     aluno1.setNome(nome);
-//		aluno1.setIdade(Integer.valueOf(idade));
+                    aluno1.setIdade(Integer.valueOf(idade));
 //		aluno1.setDataNascimento(dataNascimento);
 //		aluno1.setNumeroRg(rg);
 //		aluno1.setNumeroCpf(cpf);
@@ -128,7 +128,7 @@ public class TesteAluno {
             } else {
                 JOptionPane.showMessageDialog(null, "Acesso negado!");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             /*Brincando com as exceções e classes*/
             StringBuilder saida = new StringBuilder();
             e.printStackTrace();
@@ -141,7 +141,9 @@ public class TesteAluno {
                 saida.append("\n Linha de Erro: "+ e.getStackTrace()[posicao].getLineNumber());
                 saida.append("\n Classe: "+ e.getClass().getName());
             }
-            JOptionPane.showMessageDialog(null, "Erro ao precessar as notas!"+ saida.toString());
+            JOptionPane.showMessageDialog(null, "Erro de conversão de número!"+ saida.toString());
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Opaa um null pointer exption"+ e.getClass());
         }
     }
 }
