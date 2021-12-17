@@ -31,7 +31,7 @@ public class TesteAluno {
                 // uma lista que dentro dela temos uma chave que identifica uma sequência de valores
                 HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-                for (int quantidade = 1; quantidade <= 2; quantidade++) {
+                for (int quantidade = 1; quantidade <= 1; quantidade++) {
 
                     /**
                      * new Aluno() é uma instancia (Criação de Objeto) aluno1 é uma referência para
@@ -129,8 +129,19 @@ public class TesteAluno {
                 JOptionPane.showMessageDialog(null, "Acesso negado!");
             }
         } catch (Exception e) {
+            /*Brincando com as exceções e classes*/
+            StringBuilder saida = new StringBuilder();
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro ao precessar as notas!");
+            /*Mensagem de erro*/
+            System.out.println("Mensagem: "+ e.getMessage());
+
+            for (int posicao = 0; posicao < e.getStackTrace().length; posicao++) {
+                saida.append("\n Classe de Erro: "+ e.getStackTrace()[posicao].getClassName());
+                saida.append("\n Método de Erro: "+ e.getStackTrace()[posicao].getMethodName());
+                saida.append("\n Linha de Erro: "+ e.getStackTrace()[posicao].getLineNumber());
+                saida.append("\n Classe: "+ e.getClass().getName());
+            }
+            JOptionPane.showMessageDialog(null, "Erro ao precessar as notas!"+ saida.toString());
         }
     }
 }
