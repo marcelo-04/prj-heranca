@@ -25,3 +25,19 @@ Aprendir que trabalhar com interfaces e polimorfismo, podemos trabalhar com clas
 quebra de código nas classes.
 Dando permissão de autenticação para algumas classes como Secretário e Diretor. Iniciando um objeto da interface do tipo secretário com uma nova
 função de autenticação passando o objeto. Também podemos deixar o código genérico estancinado direto com o objeto.
+
+## O que é uma exceção? Entendendo como manipular uma exceção, com as classes do Java
+Quando criamos sistemas podem ocorrer erros e imprevistos durante sua excução, esses erros são conhecidos como exceções e podem ser errros de 
+execução, esse erros szão conhecizdos como exceções e podem ser erros de lógica, conversões e acessos. O tratamento de exceções são obrigatórios 
+para o sistema continuar funcionando.
+
+Podesmos fazer tratamento da exceção: 
+Fazendo e prevendo que algo pode acontecer os sistemas se recuperam e continua operando.
+O não Tratamento da exceção: 
+Isso acontece muito em sistemas e aocasiona a parada do sistema.
+
+* Toda exceção interrompe um bloco e um fluxo de processo
+* Podemos capturar uma exceção, começando de uma forma genérica.
+
+
+
