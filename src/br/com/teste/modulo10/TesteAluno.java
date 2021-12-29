@@ -22,8 +22,8 @@ public class TesteAluno {
     public static void main(String[] args) {
         try {
 
-            File file = new File("lines.txt");
-            Scanner scan = new Scanner(file);
+//            File file = new File("lines.txt");
+//            Scanner scan = new Scanner(file);
 
             String login = JOptionPane.showInputDialog("Informe o login");
             String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -150,9 +150,11 @@ public class TesteAluno {
             JOptionPane.showMessageDialog(null, "Erro de conversão de número!"+ saida.toString());
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Opaa um null pointer exption"+ e.getClass());
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) { //Captura todas as exceções que não prevemos
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Erro inesperado!!!"+ e.getClass().getName());
+        } finally { // Sempre é executado ocorrendo erros ou não no sistema.
+            JOptionPane.showMessageDialog(null, "Aprendendo Java...");
         }
     }
 }
