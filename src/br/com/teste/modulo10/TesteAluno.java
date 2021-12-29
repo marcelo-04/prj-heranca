@@ -7,6 +7,7 @@ import br.com.modulo10.Aluno;
 import br.com.modulo10.Diretor;
 import br.com.modulo10.Disciplina;
 import br.com.modulo10.Secretario;
+import excecao.modulo10.ExcecaoProcessarNota;
 
 import javax.swing.*;
 import java.io.File;
@@ -20,10 +21,16 @@ import java.util.Scanner;
 public class TesteAluno {
 
     public static void main(String[] args) {
-        try {
 
-//            File file = new File("lines.txt");
-//            Scanner scan = new Scanner(file);
+        try {
+            lerArquivo();
+
+//            try {
+//                File file = new File("lines.txt");
+//                Scanner scan = new Scanner(file);
+//            } catch (FileNotFoundException e) {
+//                throw new ExcecaoProcessarNota(e.getMessage());
+//            }
 
             String login = JOptionPane.showInputDialog("Informe o login");
             String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -149,12 +156,21 @@ public class TesteAluno {
             }
             JOptionPane.showMessageDialog(null, "Erro de conversão de número!"+ saida.toString());
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Opaa um null pointer exption"+ e.getClass());
-        } catch (Exception e) { //Captura todas as exceções que não prevemos
+            JOptionPane.showMessageDialog(null, "Opaa um null pointer exception"+ e.getClass());
+        } catch (ExcecaoProcessarNota e) { //Captura todas as exceções que não prevemos
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro inesperado!!!"+ e.getClass().getName());
+            JOptionPane.showMessageDialog(null, "Erro da exceção customizada!!!"+ e.getClass().getName());
         } finally { // Sempre é executado ocorrendo erros ou não no sistema.
             JOptionPane.showMessageDialog(null, "Aprendendo Java...");
+        }
+    }
+
+    public static void lerArquivo() throws ExcecaoProcessarNota {
+        try {
+            File file = new File("lines.txt");
+            Scanner scan = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new ExcecaoProcessarNota(e.getMessage());
         }
     }
 }
