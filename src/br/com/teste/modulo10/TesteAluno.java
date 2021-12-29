@@ -9,15 +9,21 @@ import br.com.modulo10.Disciplina;
 import br.com.modulo10.Secretario;
 
 import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.channels.ScatteringByteChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class TesteAluno {
 
     public static void main(String[] args) {
         try {
+
+            File file = new File("lines.txt");
+            Scanner scan = new Scanner(file);
 
             String login = JOptionPane.showInputDialog("Informe o login");
             String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -144,6 +150,9 @@ public class TesteAluno {
             JOptionPane.showMessageDialog(null, "Erro de conversão de número!"+ saida.toString());
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Opaa um null pointer exption"+ e.getClass());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro inesperado!!!"+ e.getClass().getName());
         }
     }
 }
